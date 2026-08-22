@@ -4,325 +4,420 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>walif first portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>my portfolio</title>
+    <link rel="stylesheet" href="style.css">
     <!-- FontAwesome liinkiin kee sirriidha -->
 <script src="https://kit.fontawesome.com/06e4c90032.js" crossorigin="anonymous"></script>
 <body   >
-
-    <header>
-        <div class="header-container">
-            
-            <!-- 1. Kutaa Logo (Asitti qofaa isaa cufama) -->
-            <div class="logo">
-                <div class="logo-badge">
-                    <img src="photos/logo.png" alt="logo">
-                </div>    
-
-                
-            </div>
-
-            <!-- 2. Liinkota Desktop (Screen Bal'aa) -->
-            <nav class="nav-links">
-                <a href="index.html">home</a>
-                <a href="#about">about</a>
-                <a href="#services">services</a>
-                <a href="#portfolio">portfolio</a>
-                <a href="#contact" target="_blank">contact</a>
-            </nav> 
-
-            <!-- 3. KAN MOBILE (Koodii CSS wajjin kan wal simu) -->
-            <input type="checkbox" id="menu-toggle">
-       
-            <label for="menu-toggle" class="menu-icon">
-                <i class="fa-solid fa-bars menu-open"></i>
-                <i class="fa-solid fa-xmark menu-close"></i>
-            </label>
-
-            <div class="mobile-menu">
-                <a href="index.html">home</a>
-                <a href="#services">services</a>
-                <a href="#about">about</a>
-                <a href="#portfolio">portfolio</a>
-                <a href="#contact" target="_blank">contacts</a>
-            </div>
-
-        </div> <!-- header-container asitti cufama -->
-    </header>
-   <main>
-<section class="hero">
-<div class="hero-left">
-     <div class="hero-pill">
-           <span> # </span>
-                <p>software developer and designer</p>
-     </div>
-     <h2 class="hero-title">
-                I am   <span>  Suleyman Beyan</span></h2>
-       <h3>Full-Stack Web Developer & UI/UX Designer</h3>
-         
-   
-   <div class="hero-action">
-            <button><a href=" mailto:waliftech25@gmail.com">Hire me</a></button>
-            <button><a href="photos/barcode.jpg" target="_blank">Get my CV</a> </button>
-
-     </div>
-   <div class="hero-meta"> 
-         <div class="hero-meta-item">
-
-               <strong>3+</strong>
-              years Experiance
-         </div> 
-        <div class="hero-meta-item">
-
-     
-        <strong>20+</strong>
-        project completed
- 
-       </div> 
-       <div class="hero-meta-item">
-
- 
-        <strong>35+</strong>
-          happy client
-       </div>
-    </div>
-</div>
-
-
-<div class="hero-right">
-
-    <div class="hero-img-wrap">
-      <div class="hero-img-placeholder">
-         <img src="photos/logo.png" alt="logo">
-      </div>
-    </div>
-</div>
-</section>
-<section class="scroll-section">
-    <div class="horizontal-scroll">
-
-      <div class="scroll-content" aria-selected="true" aria-setsize="">
-        <span>app design</span>
-        <span>website development</span>
-        <span>web design</span>
-        <span>app development</span>
-        <span>app design</span>
-       <span>website development</span>
-        <span>web design</span>
-        <span>app development</span>
-        <span>app design</span>
-        <span>website development</span>
-        <span>web design</span>
-        <span>app development</span>
+<header class="main-header">
+  <div class="header-container">
     
+    <!-- 1. Logo Section -->
+    <div class="logo">
+      <a href="index.html" class="logo-link">
+        <div class="logo-badge">
+          <img src="photos/logo.png" alt="Suleyman Beyan Logo">
+        </div>
+      </a>
+    </div>
 
+    <!-- 2. Desktop Navigation (Wide Screens) -->
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item active">Home</a>
+      <a href="#about" class="nav-item">About</a>
+      <a href="#services" class="nav-item">Services</a>
+      <a href="#portfolio" class="nav-item">Portfolio</a>
+      <a href="#contact" class="nav-item">Contact</a>
+    </nav> 
+
+    <!-- 3. Mobile Menu Trigger (Checkbox Hack) -->
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+ 
+    <label for="menu-toggle" class="menu-icon" aria-label="Toggle Navigation Menu">
+      <i class="fa-solid fa-bars menu-open"></i>
+      <i class="fa-solid fa-xmark menu-close"></i>
+    </label>
+
+    <!-- 4. Mobile Navigation Drawer -->
+    <nav class="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Left Column: Content and Metrics -->
+    <div class="hero-left">
+      <div class="hero-pill">
+        <span class="pill-badge">★</span>
+        <p class="pill-text">Software Developer & Designer</p>
+      </div>
+      <h1 class="hero-title">I am <span class="highlight-text">Suleyman Beyan</span></h1>
+      <h2 class="hero-subtitle">Full-Stack Web Developer & UI/UX Designer</h2>
+      
+      <div class="hero-actions">
+        <a href="mailto:waliftech25@gmail.com" class="btn btn-primary">Hire Me</a>
+        <a href="photos/barcode.jpg" target="_blank" class="btn btn-secondary">Get My CV</a>
+      </div>
+      
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <strong>3+</strong>
+          <span>Years Experience</span>
+        </div>
+        <div class="hero-meta-item">
+          <strong>20+</strong>
+          <span>Projects Completed</span>
+        </div>
+        <div class="hero-meta-item">
+          <strong>35+</strong>
+          <span>Happy Clients</span>
+        </div>
       </div>
     </div>
-</section>
+
+    <!-- Right Column: Visual Layout -->
+    <div class="hero-right">
+      <div class="hero-img-wrap">
+        <div class="hero-img-placeholder">
+          <img src="photos/logo.png" alt="Suleyman Beyan Logo Container">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee Scroll Section -->
+  <section class="scroll-section" aria-label="Our Specialties Banner">
+    <div class="horizontal-scroll">
+      
+      <!-- Track 1 -->
+      <div class="scroll-content">
+        <span>App Design</span>
+        <span>Web Development</span>
+        <span>UI/UX Design</span>
+        <span>App Development</span>
+        <span>App Design</span>
+        <span>Web Development</span>
+        <span>UI/UX Design</span>
+        <span>App Development</span>
+      </div>
+      
+      <!-- Track 2 (Infinite loop continuity) -->
+      <div class="scroll-content" aria-hidden="true">
+        <span>App Design</span>
+        <span>Web Development</span>
+        <span>UI/UX Design</span>
+        <span>App Development</span>
+        <span>App Design</span>
+        <span>Web Development</span>
+        <span>UI/UX Design</span>
+        <span>App Development</span>
+      </div>
+      
+    </div>
+  </section>
+
+
+
+
 <section id="services" class="services">
-    <div class="services-header">
-        <h5>services</h5>
-        <h3>services i provide</h3>
+  
+  <div class="services-header">
+    <h5>Specialties</h5>
+    <h2>Services I Provide</h2>
+  </div>
 
+  <div class="services-container">
+
+    <!-- Card 1: Website Development -->
+    <div class="card">
+      <div class="card-icon">
+        <img src="media/download (1).jpg" alt="Website Development Icon">
+      </div>
+      <h3 class="card-title">Website Development</h3>
+      <p class="card-text">High-quality landing pages and responsive web design.</p>
     </div>
-    <div class="services-container">
-        <div class="card">
-            <div class="icon"> <img src="media/download (1).jpg" alt="icon image" width="200px">
-                <h3 class="card-title">website development </h3>
-                <p>loading page</p> 
-                 
-            </div>
 
-        </div>
-
+    <!-- Card 2: E-Commerce Solution -->
+    <div class="card">
+      <div class="card-icon">
+        <img src="media/coommerce.jpg" alt="E-Commerce Icon">
+      </div>
+      <h3 class="card-title">E-Commerce Solutions</h3>
+      <p class="card-text">Modern online stores to boost your digital business.</p>
     </div>
-    <div class="services-container">
-        <div class="card">
-            <div class="icon"> <img src="media/coommerce.jpg" alt="icon image" width="200px">
-                <h3 class="card-title">websq                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </h3>
-                <p>loading page</p> 
-                 
-            </div>
 
-        </div>
-
+    <!-- Card 3: App Development -->
+    <div class="card">
+      <div class="card-icon">
+        <img src="media/download.jpg" alt="App Development Icon">
+      </div>
+      <h3 class="card-title">App Development</h3>
+      <p class="card-text">Custom mobile applications and digital marketing tools.</p>
     </div>
-    <div class="services-container">
-        <div class="card">
-            <div class="icon"> <img src="media/download.jpg" alt="icon image" width="200px">
-                <h3 class="card-title">app development</h3>
-                <p>loading page markating</p> 
-                 
-            </div>
 
-        </div>
+  </div>
 
-    </div>
 </section>
-<section id="about" class="about-section" >
+
+
+
+<section id="about" class="about-section" aria-labelledby="about-heading">
+  <div class="about-container">
+    
+    <!-- Left: Image and Visual Framework -->
     <div class="about-left">
-        <div class="image-wrap">
-            <div class="about-img-placeholder">
-                <img src="photos/white shoe.png" alt="photo">
-
-            </div>
-        </div> 
+      <div class="about-img-wrapper">
+        <img src="photos/white shoe.png" alt="Suleyman Beyan Profile Representation" class="about-img" loading="lazy">
+      </div>
     </div>
+
+    <!-- Right: Concise Professional Biography -->
     <div class="about-right">
-        <h5>about</h5>
-        <h2>who is suleyman beyan</h2>
-        <p> I am a passionate Software Developer and Designer dedicated to creating modern, responsive, and user-friendly digital solutions. As a Computer Science student at Harambee University (Class of 2026), I focus on transforming innovative ideas into functional web and mobile applications.</p>
+      <span class="about-subtitle">About Me</span>
+      <h2 id="about-heading" class="about-title">Who is Suleyman Beyan?</h2>
+      <p class="about-text">
+        I am a passionate <strong>Software Developer</strong> and <strong>UI/UX Designer</strong> dedicated to transforming innovative ideas into functional digital solutions. As a Computer Science student at Harambee University (Class of 2026), I focus on building clean, responsive, and user-centric web and mobile applications.
+      </p>
+      <a href="#portfolio" class="about-cta">See My Work</a>
     </div>
-     
+
+  </div>
 </section>
+
 <section class="tools-section">
-    <h5> my favorite tools</h5>
-    <h3>expolore the tools behind my skill</h3>
-    <div class="tools-scroll">
-        <div class="tools-box">
-            <div class="scroll-card">
-                <img src="media/html.png" alt="HTML logo">
-                <strong>98%</strong>
-            </div>
-            <p class="Tools-name">HTML</p>
-        </div>
-        <div class="tools-box">
-            <div class="scroll-card">
-                <img src="media/C++.jpg" alt="C++ LOGO">
-                <strong>85%</strong>
-            </div>
-            <p class="Tools-name">C++</p>
-        </div>
-        <div class="tools-box">
-            <div class="scroll-card">
-                <img src="media/Java.png" alt="JAVA logo">
-                <strong>70%</strong>
-            </div>
-            <p class="Tools-name">Java</p>
-        </div>
-         <div class="tools-box">
-            <div class="scroll-card">
-                <img src="media/PHP.png" alt="HTML logo">
-                <strong>75%</strong>
-            </div>
-            <p class="Tools-name">SQL & Database</p>
-        </div>
-        <div class="tools-box">
-            <div class="scroll-card">
-                <img src="media/C++.jpg" alt="C++ LOGO">
-                <strong>78%</strong>
-            </div>
-            <p class="Tools-name">C++</p>
-        </div>
-        <div class="tools-box">
-            <div class="scroll-card">
-                <img src="media/Java.png" alt="JAVA logo">
-                <strong>70%</strong>
-            </div>
-            <p class="Tools-name">Java</p>
-        </div>
-         
+  
+  <div class="tools-header">
+    <h5>My Tech Stack</h5>
+    <h2>Explore The Tools Behind My Skills</h2>
+  </div>
 
+  <div class="tools-scroll">
+
+    <!-- Tool 1: HTML -->
+    <div class="tools-box">
+      <div class="scroll-card">
+        <img src="media/html.png" alt="HTML5 Logo">
+        <span class="skill-percentage">98%</span>
+      </div>
+      <p class="tools-name">HTML & CSS</p>
     </div>
-</section>
-<section id="portfolio" >
-    <div class="portfolio-section">
-     <div class="section-title">
 
-        <h5> portfolio</h5>
-        <h3>my Latest portfolio</h3>
-     </div>
-     <div class="card-container">
-        <div class="card-grid">
-            <img src="media/ecommerce.jpg" alt="">
-            <p>GlowCommerce</p>
-            <h3>A premium, modern web application designed for online beauty and cosmetics retail with an interactive shopping cart.</h3>
-
-        </div>
-         <div class="card-grid">
-            <img src="media/coommerce.jpg" alt="">
-            <p>ApexMarket</p>
-            <h3> A fully responsive multi-vendor e-commerce platform optimized for seamless mobile and desktop shopping experiences.
-            </h3>
-
-        </div>
-        
-         <div class="card-grid">
-            <a href="https://yourstech.academy/">
-            <img src="media/e-commece.jpg" alt="">
-            <p>SmartCart</p>
-            <h3>An advanced e-commerce solution featuring streamlined product discovery, dynamic filtering, and a secure checkout system.
-            </h3>
-         </a>
-        </div>
-        
-         <div class="card-grid">
-            <img src="media/e-commerce project.jpg" alt="">
-            <p>SyncTeam Dashboard </p>
-            <h3>A sleek, interactive UI/UX interface built for project management and creative team collaboration.
-            </h3>
-
-        </div>
-     </div>
+    <!-- Tool 2: JavaScript -->
+    <div class="tools-box">
+      <div class="scroll-card">
+        <img src="media/Java.png" alt="JavaScript Logo">
+        <span class="skill-percentage">80%</span>
+      </div>
+      <p class="tools-name">JavaScript</p>
     </div>
-</section>
-<section id="contact">
-    <div class="contact-section">
-         <div class="contact-content">
-            <div class="contact-header">
-              <h5>Contact </h5>
-              <h3>Let's work togather</h3>
-            </div>
-            <div class="contact-details">
-                <p>Email: waliftech25@gmail.com</p>
-                <p>phone:  +251914198306 </p>
-                <p>location: Ethiopia,Bale,Robe</p>
 
-            </div>
-
-         </div>
-          <div class="contact-grid">
-<form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-  <input type="hidden" name="access_key" value="5217eccc-f1f4-4b08-9f3d-a38033bdc296">
-  <input type="text" name="name" required placeholder="your name"> 
-  <input type="email" name="email" required placeholder="your email">
-  <textarea name="message" required placeholder="your message"></textarea>
-  <button type="submit">Submit</button>
-</form>
-
-        </div>
+    <!-- Tool 3: C++ -->
+    <div class="tools-box">
+      <div class="scroll-card">
+        <img src="media/C++.jpg" alt="C++ Logo">
+        <span class="skill-percentage">85%</span>
+      </div>
+      <p class="tools-name">C++</p>
     </div>
+    <div class="tools-box">
+      <div class="scroll-card">
+        <img src="media/api dev.jpg" alt="REACT NATIVE Logo">
+        <span class="skill-percentage">75%</span>
+      </div>
+      <p class="tools-name">React Native</p>
+    </div>
+<div class="tools-box">
+      <div class="scroll-card">
+        <img src="media/pyton.jpg" alt="pyton Logo">
+        <span class="skill-percentage">85%</span>
+      </div>
+      <p class="tools-name">pyton</p>
+    </div>
+    <!-- Tool 4: Java -->
+    <div class="tools-box">
+      <div class="scroll-card">
+        <img src="media/Java.png" alt="Java Logo">
+        <span class="skill-percentage">70%</span>
+      </div>
+      <p class="tools-name">Java</p>
+    </div>
+
+    <!-- Tool 5: PHP / SQL -->
+    <div class="tools-box">
+      <div class="scroll-card">
+        <img src="media/PHP.png" alt="PHP Logo">
+        <span class="skill-percentage">75%</span>
+      </div>
+      <p class="tools-name">PHP & SQL</p>
+    </div>
+
+  </div>
 
 </section>
 
-<section><footer>
-        <div class="footer-container">
-        
-             <div class="logo">
-                <a href="index.html">
-                <div class="logo-badge">
-               
-                <img src="photos/logo.png" alt="logo">
-                </div>
-                </a>
-             
-            </div>
-            <div class="social-media">
-                <h3>Follow me</h3>
-              <p style="margin-top: 15px; font-size: 14px; color:#ccc;">
-            
-             </p>  
-            </div>
-            <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://tiktok.com"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="https://telegram.com"><i class="fa-brands fa-telegram"></i></a>
-             <a href="https://maps.google.com"><i class="fa-solid fa-location-dot"></i></a>
-                </div>
+
+<section id="portfolio" class="portfolio-section">
+  
+  <div class="portfolio-header">
+    <h5>Portfolio</h5>
+    <h2>My Latest Work</h2>
+  </div>
+
+  <div class="portfolio-container">
+
+    <!-- Project 1: GlowCommerce -->
+    <div class="portfolio-card">
+      <div class="project-image">
+        <img src="media/glowing.jpg" alt="GlowCommerce Web Application">
+      </div>
+      <div class="project-info">
+        <span class="project-category">Web Application</span>
+        <h3 class="project-title">GlowCommerce</h3>
+        <p class="project-desc">A premium, modern web application designed for online beauty and cosmetics retail with an interactive shopping cart.</p>
+        <a href="#" class="project-link">View Project →</a>
+      </div>
     </div>
-    <p class="copy">&copy;2025-suleyman beyan All Right Reserved</p>
+
+    <!-- Project 2: ApexMarket -->
+    <div class="portfolio-card">
+      <div class="project-image">
+        <img src="media/apex.png" alt="ApexMarket Platform">
+      </div>
+      <div class="project-info">
+        <span class="project-category">E-Commerce</span>
+        <h3 class="project-title">ApexMarket</h3>
+        <p class="project-desc">A fully responsive multi-vendor e-commerce platform optimized for seamless mobile and desktop shopping experiences.</p>
+        <a href="#" class="project-link">View Project →</a>
+      </div>
+    </div>
+
+    <!-- Project 3: SmartCart -->
+    <div class="portfolio-card">
+      <div class="project-image">
+        <img src="media/smart cart.jpg" alt="SmartCart Solution">
+      </div>
+      <div class="project-info">
+        <span class="project-category">E-Commerce Solution</span>
+        <h3 class="project-title">SmartCart</h3>
+        <p class="project-desc">An advanced e-commerce solution featuring streamlined product discovery, dynamic filtering, and a secure checkout system.</p>
+        <a href="https://yourstech.academy/" target="_blank" class="project-link">View Project →</a>
+      </div>
+    </div>
+
+    <!-- Project 4: SyncTeam Dashboard -->
+    <div class="portfolio-card">
+      <div class="project-image">
+        <img src="media/sync1.jpg" alt="SyncTeam Dashboard">
+      </div>
+      <div class="project-info">
+        <span class="project-category">UI/UX Design</span>
+        <h3 class="project-title">SyncTeam Dashboard</h3>
+        <p class="project-desc">A sleek, interactive UI/UX interface built for project management and creative team collaboration.</p>
+        <a href="#" class="project-link">View Project →</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    
+    <!-- Left Side: Contact Information -->
+    <div class="contact-info-box">
+      <div class="contact-header">
+        <h5>Contact</h5>
+        <h2>Let's Work Together</h2>
+      </div>
+      
+      <div class="contact-details">
+        <div class="contact-item" onclick="window.location.href='mailto:waliftech25@gmail.com'">
+          <i class="fa-solid fa-envelope email-icon"></i>
+          <span>Email: waliftech25@gmail.com</span>
+        </div>
+
+        <div class="contact-item" onclick="window.location.href='tel:+251914198306'">
+          <i class="fa-solid fa-phone phone-icon"></i>
+          <span>Phone: +251 914 198 306</span>
+        </div>
+
+        <div class="contact-item" onclick="window.open('https://maps.google.com/?q=Robe,Bale,Ethiopia', '_blank')">
+          <i class="fa-solid fa-location-dot location-icon"></i>
+          <span>Location: Ethiopia, Bale, Robe</span>
+        </div>  
+      </div>
+    </div>
+
+    <!-- Right Side: Contact Form -->
+    <div class="contact-form-box">
+      <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <input type="hidden" name="access_key" value="5217eccc-f1f4-4b08-9f3d-a38033bdc296">
+        
+        <div class="form-group">
+          <input type="text" name="name" required placeholder="Your Name">
+        </div>
+        
+        <div class="form-group">
+          <input type="email" name="email" required placeholder="Your Email">
+        </div>
+        
+        <div class="form-group">
+          <textarea name="message" required placeholder="Your Message" rows="5"></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+
+<footer class="footer-section">
+  <div class="footer-container">
+    
+    <!-- 1. Logo Section -->
+    <div class="footer-logo">
+      <a href="index.html">
+        <div class="logo-badge">
+          <img src="photos/logo.png" alt="Suleyman Beyan Logo">
+        </div>
+      </a>
+    </div>
+
+    <!-- 2. Social Media Links Section -->
+    <div class="footer-social">
+      <h3>Follow Me On</h3>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <!-- Sirreeffama: threads.com irraa gara threads.net tti jijjiirameera -->
+        <a href="https://threads.net" target="_blank" aria-label="Threads"><i class="fa-brands fa-threads"></i></a>
+        <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <!-- Sirreeffama: telegram.com irraa gara t.me tti jijjiirameera -->
+        <a href="https://t.me" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+  </div> <!-- Saanduqni container asitti sirriitti cufame -->
+
+  <!-- 3. Copyright Section -->
+  <div class="footer-bottom">
+    <p class="copy-text">&copy; 2026 Suleyman Beyan. All Rights Reserved.</p>
+  </div>
 </footer>
-</section>
+
 </main>
 
     

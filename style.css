@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Geomini:wght@200..800&display=swap');
-/* --- Global Styles & Resets --- */
+
+/* --- Global Resets & Layout Setup --- */
 * {
   margin: 0;
   padding: 0;
-  box-shadow: border-box;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
@@ -13,6 +12,7 @@ html {
 }
 
 body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #ffffff;
   color: #333333;
   overflow-x: hidden;
@@ -42,6 +42,7 @@ body {
 .logo-badge img {
   height: 45px;
   width: auto;
+  border-radius: 100%;
   object-fit: contain;
 }
 
@@ -183,36 +184,58 @@ body {
   margin-top: 5px;
 }
 
+ 
 .hero-right {
   flex: 1;
   display: flex;
-  justify-content: center;
-}
-
-.hero-img-wrap {
-  width: 100%;
-  max-width: 420px;
-  aspect-ratio: 1;
-  background: #f8f9fa;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  display: flex;
+  justify-content: flex-end; /* Suuraa fi holder gara mirga skiriiniitti maxxansa */
   align-items: center;
+}
+ 
+.hero-img-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Dhiphina saanduqa blob liimitiin qaba */
+  aspect-ratio: 1; /* Saanduqni yoomiyyuu geengoo/blob akka ta'u taasisa */
+  background: #f8f9fa; /* Halluu duuba suuraa */
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Bifa blob ammayyaa */
+  display: flex;
+  align-items: flex-end; /* Suuraan gadi dacha'ee unkee blob akka hordofu */
   justify-content: center;
-  overflow: hidden;
+  overflow: hidden; /* Suuraan daangaa saanduqa blob ala akka hin baane ittisa */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+ 
+.hero-img-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Suuraan saanduqa blob keessatti bifa baddaan akka wal simu */
+  border-radius: inherit; /* Bifa blob duuba jiru guutummaatti hordofa */
+  display: block;
+}/* --- Visual Layout Structure (Desktop) --- */
+
+
+/* Saanduqa bifa blob qabu (Image Holder) */
+
+
+.hero-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
-.hero-img-placeholder img {
-  max-width: 260px;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
+/* Sirreeffama Suuraa Guddaa San Sassaabuuf */
+
+
+
 
 /* --- Scroll Marquee Section Styles --- */
 .scroll-section {
   width: 100%;
-  background-color: #0b0b0b;
-  padding: 35px 0;
+  background-color: #8f6656d0;
+  padding: 30px 0;
   overflow: hidden;
   display: flex;
   margin-top: 40px;
@@ -228,11 +251,10 @@ body {
 .scroll-content {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  flex-shrink: 0;
   min-width: 100%;
-  gap: 60px;
-  padding-right: 60px;
-  animation: infinite-marquee 25s linear infinite;
+  white-space: nowrap;
+  animation: infinite-marquee 20s linear infinite;
 }
 
 .scroll-content span {
@@ -240,20 +262,24 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 2px;
+  padding: 0 40px;
+  display: inline-flex;
+  align-items: center;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
+  -webkit-text-stroke: 1px rgba(248, 245, 245, 0.959);
   transition: all 0.3s ease;
 }
 
 .scroll-content span:hover {
-  color: #007bff;
-  -webkit-text-stroke: 1px #007bff;
+  color: #0b74e4;
+  -webkit-text-stroke: 1px #107cf0;
+  cursor: default;
 }
 
 .scroll-content span::after {
   content: "•";
-  margin-left: 60px;
-  color: #007bff;
+  margin-left: 80px;
+  color: #f51808;
   -webkit-text-stroke: none;
 }
 
@@ -266,111 +292,6 @@ body {
   animation-play-state: paused;
 }
 
-/* --- Responsive Media Queries (Mobile Breakdown) --- */
-@media screen and (max-width: 768px) {
-  /* Header Toggle Breakpoints */
-  .nav-links {
-    display: none;
-  }
-
-  .menu-icon {
-    display: block;
-    font-size: 1.5rem;
-    color: #333333;
-    cursor: pointer;
-    z-index: 1001;
-  }
-
-  .menu-checkbox:checked ~ .menu-icon .menu-open {
-    display: none;
-  }
-
-  .menu-checkbox ~ .menu-icon .menu-close {
-    display: none;
-  }
-
-  .menu-checkbox:checked ~ .menu-icon .menu-close {
-    display: block;
-  }
-
-  .mobile-menu {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    padding: 20px 0;
-    gap: 15px;
-    align-items: center;
-    transform: translateY(-120%);
-    opacity: 0;
-    transition: transform 0.4s ease, opacity 0.3s ease;
-    z-index: 999;
-  }
-
-  .menu-checkbox:checked ~ .mobile-menu {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .mobile-menu a {
-    text-decoration: none;
-    color: #333333;
-    font-size: 1.1rem;
-    font-weight: 600;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  /* Hero Section Stack Alteration */
-  .hero {
-    flex-direction: column-reverse;
-    gap: 40px;
-    text-align: center;
-    margin: 30px auto;
-  }
-
-  .hero-title {
-    font-size: 2.4rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .hero-meta {
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .hero-meta-item strong {
-    font-size: 1.8rem;
-  }
-
-  .hero-img-wrap {
-    max-width: 280px;
-  }
-
-  .hero-img-placeholder img {
-    max-width: 180px;
-  }
-}
- 
 /* --- Services Section --- */
 .services {
   padding: 80px 20px;
@@ -526,26 +447,145 @@ body {
   box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
 }
 
-/* --- Tools Section --- */
+/* --- Global Media Queries for Mobile Responsiveness --- */
+@media screen and (max-width: 768px) {
+  /* Header Toggle Breakpoints */
+  .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 1.5rem;
+    color: #333333;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .menu-checkbox:checked ~ .menu-icon .menu-open {
+    display: none;
+  }
+
+  .menu-checkbox ~ .menu-icon .menu-close {
+    display: none;
+  }
+
+  .menu-checkbox:checked ~ .menu-icon .menu-close {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    gap: 15px;
+    align-items: center;
+    transform: translateY(-120%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+    z-index: 999;
+  }
+
+  .menu-checkbox:checked ~ .mobile-menu {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .mobile-menu a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  /* Hero Section Stack Alteration */
+  .hero {
+    flex-direction: column-reverse;
+    gap: 40px;
+    text-align: center;
+    margin: 30px auto;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-meta {
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .hero-meta-item strong {
+    font-size: 1.8rem;
+  }
+
+  .hero-img-wrap {
+    max-width: 280px;
+  }
+
+  .hero-img-placeholder img {
+    max-width: 180px;
+  }
+
+  /* Section Title Compression */
+  .services-header h2,
+  .about-title {
+    font-size: 2rem;
+  }
+
+  /* Marquee Banner Mobile Scaling */
+  .scroll-content span {
+    font-size: 1.4rem;
+    padding: 0 20px;
+  }
+  
+  .scroll-content span::after {
+    margin-left: 40px;
+  }
+
+  /* Layout Container Stack Adaptations */
+  .about-container {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .about-img-wrapper {
+    margin: 0 auto;
+  }
+}
+/* ==========================================================================
+   7. TECH STACK AND TOOLS GRID
+   ========================================================================= */
 .tools-section {
   padding: 80px 20px;
   text-align: center;
   background-color: #ffffff;
   overflow: hidden;
-}
-
-.tools-header h5 {
-  color: #007bff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-  font-size: 0.9rem;
-}
-
-.tools-header h2 {
-  font-size: 2.3rem;
-  margin-bottom: 40px;
-  color: #333333;
 }
 
 .tools-scroll {
@@ -610,111 +650,13 @@ body {
   font-size: 0.95rem;
 }
 
-/* --- Infinite Scrolling Banner Setup --- */
-.scroll-section {
-  width: 100%;
-  background-color: #0c0f14; /* Deep premium dark background */
-  padding: 30px 0;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-
-.horizontal-scroll {
-  display: flex;
-  width: 100%;
-  overflow: hidden;
-}
-
-.scroll-content {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0; /* Prevents the inner track container from squeezing */
-  min-width: 100%;
-  white-space: nowrap; /* Forces all items to stay on a single horizontal line */
-  animation: seamless-marquee 20s linear infinite;
-}
-
-.scroll-content span {
-  font-size: 2.2rem; /* Clean professional headline typography height */
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 0 40px; /* Safe padding barrier to stop words from mashing together */
-  display: inline-flex;
-  align-items: center;
-  
-  /* Modern High-End Styling: Translucent inner text with sharp outer borders */
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-/* Elegant separator dot placed precisely between specialties */
-.scroll-content span::after {
-  content: "•";
-  margin-left: 80px; /* Large safe margin to block word collisions completely */
-  color: #007bff; /* Bright blue brand indicator */
-  -webkit-text-stroke: none;
-}
-
-/* Micro-interaction: Lights up when user hovers */
-.scroll-content span:hover {
-  color: #007bff;
-  -webkit-text-stroke: 1px #007bff;
-  cursor: default;
-}
-
-/* Animation Configuration: Moves exactly one complete clone length */
-@keyframes seamless-marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-/* Pauses movement smoothly on desktop hover for readability */
-.horizontal-scroll:hover .scroll-content {
-  animation-play-state: paused;
-}
-
-/* --- Mobile Responsiveness Breakpoint --- */
-@media screen and (max-width: 768px) {
-  .scroll-section {
-    padding: 20px 0; /* Slightly narrower vertical padding on mobile scales */
-  }
-  
-  .scroll-content span {
-    font-size: 1.4rem; /* Downscales text size cleanly so it fits mobile screens perfectly */
-    padding: 0 20px;
-  }
-  
-  .scroll-content span::after {
-    margin-left: 40px;
-  }
-}
-
-/* --- Portfolio Section --- */
+/* ==========================================================================
+   8. PORTFOLIO WORK SHOWCASE
+   ========================================================================= */
 .portfolio-section {
   padding: 80px 20px;
   background-color: #f4f7f6;
   text-align: center;
-}
-
-.portfolio-header h5 {
-  color: #007bff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-  font-size: 0.9rem;
-}
-
-.portfolio-header h2 {
-  font-size: 2.5rem;
-  color: #222222;
-  margin-bottom: 50px;
 }
 
 .portfolio-container {
@@ -803,7 +745,9 @@ body {
   color: #0056b3;
 }
 
-/* --- Contact Section --- */
+/* ==========================================================================
+   9. CONTACT INFO & FORM VIEWPORTS
+   ========================================================================= */
 .contact-section {
   padding: 80px 20px;
   background-color: #ffffff;
@@ -820,20 +764,6 @@ body {
 .contact-info-box, .contact-form-box {
   flex: 1;
   min-width: 300px;
-}
-
-.contact-header h5 {
-  color: #007bff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-  font-size: 0.9rem;
-}
-
-.contact-header h2 {
-  font-size: 2.5rem;
-  color: #222222;
-  margin-bottom: 30px;
 }
 
 .contact-details {
@@ -916,36 +846,8 @@ body {
   background-color: #0056b3;
 }
 
-/* --- Global Media Queries for Mobile Responsiveness --- */
-@media screen and (max-width: 768px) {
-  .services-header h2,
-  .about-title,
-  .tools-header h2,
-  .portfolio-header h2,
-  .contact-header h2 {
-    font-size: 2rem;
-  }
-
-  .about-container {
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .about-img-wrapper {
-    margin: 0 auto;
-  }
-
-  .contact-container {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .contact-form {
-    padding: 25px;
-  }
-}
-/* --- Footer Section Base Configuration --- */
+ /* --- Footer Base Styles --- */
+/* --- Footer Base Styles --- */
 .footer-section {
   background-color: #111111;
   color: #ffffff;
@@ -956,7 +858,7 @@ body {
 .footer-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Centers both the logo box and social box on mobile */
   gap: 35px;
   max-width: 1200px;
   margin: 0 auto;
@@ -968,18 +870,13 @@ body {
   height: 50px;
   width: auto;
   object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.logo-badge img:hover {
-  transform: scale(1.05);
 }
 
 .footer-social {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 15px;
+  align-items: center; /* Centers the internal components on mobile */
+  width: 100%;
 }
 
 .footer-social h3 {
@@ -988,19 +885,23 @@ body {
   letter-spacing: 1px;
   color: #ffffff;
   text-transform: uppercase;
+  margin-bottom: 15px;
+  text-align: center; /* Explicitly forces the H3 text to stay centered on mobile */
+  width: 100%;
 }
 
 .social-icons {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centers all child icon circles on mobile */
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .social-icons a {
   color: #aaaaaa;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -1029,14 +930,26 @@ body {
   margin: 0;
 }
 
+/* --- Responsive Layout (Desktop Override) --- */
 @media screen and (min-width: 768px) {
   .footer-container {
     flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+    justify-content: space-between; /* Pushes Logo to the far left, Social box to the far right */
+    align-items: center;
   }
 
   .footer-social {
-    align-items: flex-end;
+     width: auto;
+
+  }
+
+  .footer-social h3 {
+    text-align: center; /* Aligns heading cleanly to the right edge on desktop */
+  }
+
+  .social-icons {
+    justify-content: flex-end; /* Groups icon items nicely to the right side on desktop */
+    width: auto;
   }
 }
+
